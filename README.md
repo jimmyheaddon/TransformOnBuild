@@ -1,3 +1,6 @@
+This is an unofficial fork of the [clariuslabs/TransformOnBuild](https://github.com/clariuslabs/TransformOnBuild) repository, migrated to .NET 4.6.1 to support .NET Standard and .NET Core projects when run as from the CLI (e.g. `dotnet build`).
+
+
 ![Icon](https://raw.github.com/clariuslabs/TransformOnBuild/master/icon/32.png) Transform Text Templates On Build
 ============
 
