@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata minClientVersion="2.8">
-    <id>Clarius.TransformOnBuild</id>
-    <version>1.22</version>
+    <id>Clarius.TransformOnBuild.NETCore-Unofficial</id>
+    <version>1.23</version>
     <title>Transform Text Templates On Build</title>
     <description>Automatically transforms on build all files with a build action of `None/Content` that have the `TextTemplatingFileGenerator` custom tools associated, without requiring the installation of any Visual Studio SDK.</description>
     <authors>Daniel Cazzulino, Michael Naumov</authors>
     <owners>clariuslabs, danielkzu, mnaoumov</owners>
     <language>en-US</language>
-    <licenseUrl>https://github.com/clariuslabs/TransformOnBuild/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/clariuslabs/TransformOnBuild</projectUrl>
-    <iconUrl>https://raw2.github.com/clariuslabs/TransformOnBuild/master/icon/128.png</iconUrl>
+    <licenseUrl>https://github.com/jimmyheaddon/TransformOnBuild/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/jimmyheaddon/TransformOnBuild</projectUrl>
+    <iconUrl>https://github.com/jimmyheaddon/TransformOnBuild/master/icon/128.png</iconUrl>
     <tags>visualstudio t4 text template transformation clariuslabs</tags>
     <developmentDependency>true</developmentDependency>
     <releaseNotes>
-* Fixed support for Visual Studio 2017 v15.8 - possible regression with Visual Studio dll lock file
+* Migrated target framework to .NET 4.6.1 for .NET Standard 2.0 support
 
-* Add support for Visual Studio 2017 BuildTools
-
-* Don't clutter project folder with temporary backup files
+* Add support for Visual Studio 2019 BuildTools
     </releaseNotes>
   </metadata>
 </package>

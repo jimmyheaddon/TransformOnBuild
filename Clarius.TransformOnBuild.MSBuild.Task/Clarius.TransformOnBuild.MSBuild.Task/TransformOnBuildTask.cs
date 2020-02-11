@@ -11,8 +11,10 @@ using Microsoft.Build.Framework;
 
 namespace Clarius.TransformOnBuild.MSBuild.Task
 {
+    using Microsoft.Build.Utilities;
+
     // ReSharper disable once UnusedMember.Global
-    public class TransformOnBuildTask : Microsoft.Build.Utilities.Task
+    public class TransformOnBuildTask : Task
     {
         private ProjectInstance _projectInstance;
         private Dictionary<string, string> _properties;
@@ -147,6 +149,10 @@ namespace Clarius.TransformOnBuild.MSBuild.Task
             var textTransformPathCandidates = new[]
             {
                 GetPropertyValue("TextTransformPath"),
+                $@"{_programFiles}\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\TextTransform.exe",
+                $@"{_programFiles}\Microsoft Visual Studio\2019\Professional\Common7\IDE\TextTransform.exe",
+                $@"{_programFiles}\Microsoft Visual Studio\2019\Community\Common7\IDE\TextTransform.exe",
+                $@"{_programFiles}\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\TextTransform.exe",
                 $@"{_programFiles}\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\TextTransform.exe",
                 $@"{_programFiles}\Microsoft Visual Studio\2017\Professional\Common7\IDE\TextTransform.exe",
                 $@"{_programFiles}\Microsoft Visual Studio\2017\Community\Common7\IDE\TextTransform.exe",
@@ -188,7 +194,7 @@ namespace Clarius.TransformOnBuild.MSBuild.Task
             var projectInstanceField = targetCallbackType.GetField("projectInstance", BindingFlags) ?? targetCallbackType.GetField("_projectInstance", BindingFlags);
             if (projectInstanceField == null)
                 throw new Exception("Could not extract projectInstance from " + targetCallbackType.FullName);
-            return (ProjectInstance) projectInstanceField.GetValue(targetBuilderCallback);
+            return (ProjectInstance)projectInstanceField.GetValue(targetBuilderCallback);
         }
 
         // ReSharper disable once ParameterOnlyUsedForPreconditionCheck.Local

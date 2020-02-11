@@ -75,8 +75,11 @@
       <InProject>false</InProject>
     </TextTransformParameter>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\..\nuget\build\Clarius.TransformOnBuild.targets" />
+  <Import Project="..\..\nuget\build\Clarius.TransformOnBuild.NETCore-Unofficial.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

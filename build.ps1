@@ -25,7 +25,7 @@ function Main
 
 function CompileSolution
 {
-    $msbuildPath = 'c:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe'
+    $msbuildPath = 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin\MSBuild.exe'
     $solutionPath = "$PSScriptRoot\Clarius.TransformOnBuild.MSBuild.Task\Clarius.TransformOnBuild.MSBuild.Task.sln"
 
     exec { & $msbuildPath $solutionPath }
@@ -46,7 +46,7 @@ function DownloadNuGet
 function PackNuGetPackage
 {
     $nugetPath = "$PSScriptRoot\.nuget\nuget.exe"
-    $nuspecPath = "$PSScriptRoot\nuget\Clarius.TransformOnBuild.nuspec"
+    $nuspecPath = "$PSScriptRoot\nuget\Clarius.TransformOnBuild.NETCore-Unofficial.nuspec"
     $dropPath = "$PSScriptRoot\drop"
 
     exec { & $nugetPath pack -NoPackageAnalysis $nuspecPath -Version $PackageVersion -OutputDirectory $dropPath }
